@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>Licia Luxe Beauty</title>
+    
+
+    <!-- Fonts -->
+     <link
+     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500&display=+"rel="stylesheet">
+
+     <link rel="stylesheet" href="static/style.css">
+</head>
+
+<script src="script.js"></script>
+
+<body>
+
+<header class="main-header">
+    <img src="LiciaLuxeBeautyLogo.png"alt="Licia Luxe Beauty Logo"
+    class="main-logo">
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#shop">Shop</a>
+    <a href="#contact">Contact</a>
+    <a href="checkout.html">🛒Cart</a>
+
+</nav>
+</header>
+
+<section class="hero">
+    <h1>Licia Luxe Beauty</h1>
+    <p>Experience Elegance That Defies Expectations</p>
+    <button>Shop Now</button>
+</section>
+
+<section class="section-light">
+    <h2>About Licia Luxe Beauty</h2>
+    <p>
+        Licia Luxe Beauty was created for women who embrace elegance, confidence and individuality. Our mission is to deliver luxurious beauty essentials designed to elevate everyday beauty into an extraordinary experience.
+    </p>
+</section>
+
+<section class="Products">
+    <h2>Our Products</h2>
+    <div class="Product-Card">
+    <h3>Perfumes</h3>
+    <img src="perfume.jpg">                                                                                                                                                                "
+    <h3>Luxe Perfume</h3>
+    <p>Crafted to embody elegance, confidence, and timeless luxury</p>
+    <p class="price">R150</p>
+    <button onclick="AddToCart(Luxe Perfume ,R150)">Add To Cart</button>
+    </div>
+
+    <div class="Product-Card">
+        <img src="oil.jpg">
+        <h3>Hair Oil: Licia Luxe Growth Elixir</h3>
+        <p>Crafted to strengthen roots, promote healthy growth, and restore shine to your crown</p>
+        <p class="price">R120</p>
+        <button onclick="AddToCart(Hair Oil: Licia Luxe Growth Elixir',R120)">Add To Cart</button>
+    </div>
+
+</section>
+
+<section class="info">
+
+    <h2>Why Choose Licia Luxe Beauty</h2>
+
+    <p>
+        We provide high quality luxury beauty products made to enhance your confidence and natural beauty.When using our products , defying Expectations will be your personality.
+    </p>
+
+    <ul>
+        <li>Premium quality products</li>
+        <li>Affordable luxury</li>
+        <li>Lasting Scents</li>
+    </ul>
+</section>
+
+<section class="cart">
+    <h2>Your Cart</h2>
+
+    <ul id="Cart-Items"></ul>
+
+    <p id="Total">Total: R0</p>
+    <a href="checkout.html">
+    <button class="Checkout">Go To Checkout</button>
+    </a>
+    
+</section>
+
+<div class="topbar">
+    <h2>Licia Luxe Beauty</h2>
+    <div class="cart-icon">
+        🛒<span id="cart-count">0</span>
+    </div>
+</div>
+
+<footer>
+    <p>©2026 Licia Luxe Beauty</p>
+</footer>
+
+</body>
+</html>
+
+<script>
+    let total= 0;
+    let count = 0;
+
+    function AddToCart(product,price){
+        const cartItems=
+        document.getElementById("cart-items");
+
+        let li = document.createElement("li");
+        li.textContent = product + "-R" + price;
+        CartItems.appendChild(li);
+
+        total += price;
+        count++;
+
+        document.getElementById("total").textContent = "total:R" + total;
+        document.getElementById("cart-count").textContent = count;
+    }
+</script>
+
